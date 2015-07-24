@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+	<title>Populate: Hierarchal Demo</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link type="text/css" rel="stylesheet" href="css/all.css" />
+	<script type="text/javascript" src="js/jquery/jquery-1.2.1.pack.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.populate.js"></script>
+	<script type="text/javascript" src="js/populate-page-functions.js"></script>
+	
+</head>
+<body>
+
+	<div id="page">
+	
+		<div id="header">
+			<h1>Populate: Hierarchal Demo</h1>
+			<h2>jQuery plugin to populate an HTML form with values, on the client, rather than server-side</h2>
+		</div>
+		
+		<hr />
+		
+		<div class="content" id="section-main">
+			<div id="hierarchical-demo" class="section">
+				<h3>Populating a hierarchically-named form with hierarchical JSON data</h3>
+				<h4>JSON</h4>
+				<form name="json_hierarchal" id="json-hierarchal">
+					<div style="padding:10px 20px 10px 10px;">
+						<textarea name="json" rows="12" wrap="virtual" class="textarea code" style="width:100% !important" />{
+personal:{
+	first_name:'Dave', 
+	last_name:'Stewart',
+	country:'england'
+	},
+contact:{
+	email:'dave@davestewart',
+	phone:'020 0000 0000',
+	method:'phone'
+	}
+}
+						</textarea>
+						<div class="json-sample" id="json-simple-sample">&nbsp;</div>
+						<input type="button" class="button" value="Populate" style="width:100% !important; margin:10px 0px 0px 5px;" onclick="populateForm('hierarchal')" />
+						<input type="button" class="button" value="Reset" style="width:100% !important; margin:10px 0px 0px 5px;" onclick="resetForms('hierarchal')" />
+					</div>
+
+				</form>
+				
+				<h4>Form controls</h4>
+				<form name="form_hierarchal" id="form-hierarchal" action="results.php" method="post" target="_blank" style="margin-top:15px">
+					<fieldset>
+						<legend>Personal</legend>
+						<ul class="controls">
+							<li>
+								<label for="first-name">First Name</label>
+								<input name="personal[first_name]" id="personal-first-name" type="text" class="text" maxlength="" value=""  />
+							</li>
+							
+							<li>
+								<label for="last-name">Last Name</label>
+								<input name="personal[last_name]" id="personal-last-name" type="text" class="text" maxlength="" value=""  />
+							</li>
+							
+							<li>
+								<label for="personal[country]">Country</label>
+								<select name="personal[country]" id="personal-country" class="select-multiple" >
+									<option value="" selected="selected">Select...</option>
+									<option value="">- - - - - - - - - - - - - - - - - - - - - - </option>
+									<option value="england">England</option>
+									<option value="scotland">Scotland</option>
+									<option value="wales">Wales</option>
+									<option value="ireland">Ireland</option>
+								</select>
+							</li>
+
+						</ul>
+					</fieldset>
+					
+					<fieldset>
+						<legend>Contact</legend>
+						<ul class="controls">
+						
+							<li>
+								<label for="email">Email</label>
+								<input name="contact[email]" id="email" type="text" class="text" maxlength="" value=""  />
+							</li>
+
+							<li>
+								<label for="phone">Phone</label>
+								<input name="contact[phone]" id="phone" type="text" class="text" maxlength="" value=""  />
+							</li>
+
+							<li>
+								<label for="method">Prefered</label>
+								<fieldset id="method">
+									<label><input name="contact[method]" id="" type="radio" class="radio" value="email" /> Email</label>
+									<label><input name="contact[method]" id="" type="radio" class="radio" value="phone" /> Phone</label>
+								</fieldset>
+							</li>
+
+						</ul>
+					</fieldset>
+				</form>
+				
+			</div>
+			<hr />
+		</div>
+
+	</div>
+
+</body>
+</html>

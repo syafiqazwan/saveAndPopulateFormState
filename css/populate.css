@@ -1,0 +1,37 @@
+	thead td{
+		border-bottom: 1px solid #ccc !important;
+		font-weight:bold;
+		}
+
+	code, 
+	pre{
+		margin:10px 15px;
+		font-family:"Courier New", Courier, monospace;
+		font-size:11px;
+		color:#3366FF;
+		padding:5px;
+		white-space:pre;
+		}
+
+	.code{
+		font-family:"Courier New", Courier, monospace;
+		font-size:11px;
+		color:#3366FF;
+		padding:2px;
+		white-space:pre;
+		}
+
+		
+	.red {
+		color:#f00;
+		font-style:italic;
+		}
+		
+	.no-border{
+		border:none !important;
+		}
+		
+	.plain{
+		border:none !important;
+		list-style:none !important;
+		}
